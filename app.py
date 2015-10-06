@@ -65,6 +65,7 @@ def main():
             f.close()
             s_count += 1
     print('Getting a snapshot from the camera. Got %s snapshots total. Downloaded size : %s' % (s_count,f_size))
+    os.remove(f)
 
 def getNormalisedResponseData(req):
     return json.loads(req.text)

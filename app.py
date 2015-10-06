@@ -2,10 +2,18 @@ import requests, sys, time, json, tempfile, shutil, os
 
 def main():
 
+    print("===== Initiating test run =========\n")
+
     # basic web-client check
     srv = sys.argv[1]
 
-    print("===== Initiating test run =========\n")
+    r = getRequest(srv,'/')
+    if r.status_code == 200:
+        print("Web-client: available (+)")
+    else:
+        print("Web client is not available")
+
+
 
     # calling uuid
     r = getRequest(srv,'uuid')

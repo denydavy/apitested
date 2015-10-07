@@ -147,11 +147,13 @@ def main():
         else:
             print("Failed to get detector's events for camera %s" % camera)
 
+    print("===== Test finished! ======")
+
 def getNormalisedResponseData(req):
     return json.loads(req.text)
 
 def getRequest(srv,api_command):
-    print("api call :" + "http://" + str(srv) + "/" + api_command)
+    # print("api call :" + "http://" + str(srv) + "/" + api_command)
     return requests.get("http://"+str(srv)+"/"+api_command, auth=('root','root'))
 
 if __name__ == "__main__" : main()
